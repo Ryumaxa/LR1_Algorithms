@@ -14,7 +14,8 @@ import org.example.iec61850.datatypes.common.Timestamp;
 @Getter @Setter
 public class AnalogueValue extends Data {
     private Attribute<Double> f = new Attribute<>();
+    private Attribute<Integer> i = new Attribute<>();
 
-    private Quality q;
-    private Timestamp t;
+//    private Quality q;
+//    private Timestamp t;
 }

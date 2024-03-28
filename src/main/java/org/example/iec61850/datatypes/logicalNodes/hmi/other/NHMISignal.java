@@ -1,6 +1,7 @@
 package org.example.iec61850.datatypes.logicalNodes.hmi.other;
 
-import ru.mpei.iec61850.datatypes.common.Attribute;
+
+import org.example.iec61850.datatypes.common.Attribute;
 
 /**
  * @author Александр Холодов

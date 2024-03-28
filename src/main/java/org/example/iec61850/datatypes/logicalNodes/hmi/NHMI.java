@@ -1,5 +1,7 @@
 package org.example.iec61850.datatypes.logicalNodes.hmi;
 
+import org.example.iec61850.datatypes.common.Attribute;
+import org.example.iec61850.datatypes.logicalNodes.common.LN;
 import org.example.iec61850.datatypes.logicalNodes.hmi.other.NHMISignal;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -12,8 +14,6 @@ import org.jfree.data.Range;
 import org.jfree.data.general.Series;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
-import ru.mpei.iec61850.datatypes.common.Attribute;
-import ru.mpei.iec61850.logicalNodes.common.LN;
 
 import javax.swing.*;
 import java.awt.*;

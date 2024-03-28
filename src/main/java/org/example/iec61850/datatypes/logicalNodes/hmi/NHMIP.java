@@ -127,6 +127,4 @@ public class NHMIP extends LN {
 	public void setMaxRange(double maxRange) {
 		this.maxRange = maxRange;
 	}
-
-
 }

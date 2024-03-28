@@ -8,8 +8,11 @@ import lombok.Setter;
  */
 
 @Getter @Setter
-public class Attribute<T> {
+public class Attribute<T> extends Data{
     private T value;
+
+    public Attribute() {
+    }
 
     public Attribute(T value){
 

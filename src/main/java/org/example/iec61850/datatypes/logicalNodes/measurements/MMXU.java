@@ -20,7 +20,6 @@ public class MMXU extends LN {
     private SAV TotPF = new SAV();
     private SAV Hz = new SAV();
     private DEL PPV = new DEL();
-
     private WYE PNV = new WYE();
     private WYE PhV = new WYE();
     private WYE W = new WYE();
@@ -30,21 +29,17 @@ public class MMXU extends LN {
     private WYE Z = new WYE();
 
 
-
     /* Входы */
-
     public SAV IaInst = new SAV();
     public SAV IbInst = new SAV();
     public SAV IcInst = new SAV();
 
-    /* Выходы */
 
+    /* Выходы */
     public WYE A = new WYE(); // Фазные токи (IL1, IL2, IL3)
 
 
     /* Переменные */
-
-
     private final Filter ia = new Fourier(busSize);
     private final Filter ib = new Fourier(busSize);
     private final Filter ic = new Fourier(busSize);
@@ -52,12 +47,8 @@ public class MMXU extends LN {
 
     @Override
     public void process() {
-//        this.ia.process(this.IaInst, A.getPhsA().getCVal());
-//        this.ib.process(this.IbInst, A.getPhsB().getCVal());
-//        this.ic.process(this.IcInst, A.getPhsC().getCVal());
         this.ia.process(this.IaInst, A.getPhsA());
         this.ib.process(this.IbInst, A.getPhsB());
         this.ic.process(this.IcInst, A.getPhsC());
-
     }
 }

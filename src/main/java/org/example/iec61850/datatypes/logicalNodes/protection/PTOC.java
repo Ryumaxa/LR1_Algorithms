@@ -14,7 +14,7 @@ import org.example.iec61850.datatypes.settings.*;
 
 public class PTOC extends LN {
 
-    public static double dt = 0.0000250; // милли сек
+    public static double dt = 1; // милли сек
 
     private INC OpCntRs = new INC();
     private CURVE TmACrv = new CURVE();
@@ -65,8 +65,6 @@ public class PTOC extends LN {
 
     @Override
     public void process() {
-
-
         boolean strA = A.getPhsA().getInstCVal().getMag().getF().getValue() > StrVal.getSetMag().getF().getValue();
         boolean strB = A.getPhsB().getInstCVal().getMag().getF().getValue() > StrVal.getSetMag().getF().getValue();
         boolean strC = A.getPhsC().getInstCVal().getMag().getF().getValue() > StrVal.getSetMag().getF().getValue();
@@ -77,16 +75,13 @@ public class PTOC extends LN {
         Str.getPhsB().setValue(strB);
         Str.getPhsC().setValue(strC);
 
-
         cntTimeA = strA ? cntTimeA + 1 : 0;
         cntTimeB = strB ? cntTimeB + 1 : 0;
         cntTimeC = strC ? cntTimeC + 1 : 0;
 
-        // Мб убрать выдержку
         Op.getPhsA().setValue(cntTimeA * dt > OpDITmms.getSetVal().getValue());
         Op.getPhsB().setValue(cntTimeB * dt > OpDITmms.getSetVal().getValue());
         Op.getPhsC().setValue(cntTimeC * dt > OpDITmms.getSetVal().getValue());
-        Op.getGeneral().setValue(cntTimeA * dt > OpDITmms.getSetVal().getValue());
-
+        Op.getGeneral().setValue(Op.getPhsA().getValue() || Op.getPhsB().getValue() || Op.getPhsC().getValue());
     }
 }

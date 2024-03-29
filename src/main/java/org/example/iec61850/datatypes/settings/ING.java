@@ -13,5 +13,4 @@ import org.example.iec61850.datatypes.common.Data;
 @Getter @Setter
 public class ING extends Data {
     private Attribute<Integer> setVal = new Attribute<>();
-
 }

@@ -14,8 +14,12 @@ import java.util.List;
 
 public class Main {
     private static final List<LN> logicalNodes = new ArrayList<>();
-    private static String path = "C:\\Users\\Roman\\Desktop\\АЛГОСЫ\\LR1\\Опыты\\Начало линии";
-    private static String name = "PhA80";
+//    private static String path = "C:\\Users\\Roman\\Desktop\\АЛГОСЫ\\LR1\\Опыты\\Начало линии";
+    private static String path = "C:\\Users\\Roman\\Desktop\\АЛГОСЫ\\LR1\\Опыты\\Конец линии";
+//    private static String name = "PhABC20"; // В конце линии
+    private static String name = "PhC20"; // В конце линии
+//    private static String name = "PhB20"; // В начале линии
+//    private static String name = "PhBC20"; // В начале линии
 
     public static void main(String[] args) throws IOException {
 
@@ -32,22 +36,22 @@ public class Main {
         PTOC ptoc1 = new PTOC();
         logicalNodes.add(ptoc1);
         ptoc1.A = mmxu.A;
-        ptoc1.StrVal.getSetMag().getF().setValue(3300.0); // Уточнить
+        ptoc1.StrVal.getSetMag().getF().setValue(3000.0);
         ptoc1.OpDITmms.getSetVal().setValue(0);
         ptoc1.TmMult.getStepSize().getF().setValue(20.0 / 20);
 
         PTOC ptoc2 = new PTOC();
         logicalNodes.add(ptoc2);
         ptoc2.A = mmxu.A;
-        ptoc2.StrVal.getSetMag().getF().setValue(3300.0);
-        ptoc2.OpDITmms.getSetVal().setValue(0);
+        ptoc2.StrVal.getSetMag().getF().setValue(583.0);
+        ptoc2.OpDITmms.getSetVal().setValue(300);
         ptoc2.TmMult.getStepSize().getF().setValue(20.0 / 20);
 
         PTOC ptoc3 = new PTOC();
         logicalNodes.add(ptoc3);
         ptoc3.A = mmxu.A;
-        ptoc3.StrVal.getSetMag().getF().setValue(3300.0);
-        ptoc3.OpDITmms.getSetVal().setValue(0);
+        ptoc3.StrVal.getSetMag().getF().setValue(356.72);
+        ptoc3.OpDITmms.getSetVal().setValue(600);
         ptoc3.TmMult.getStepSize().getF().setValue(20.0 / 20);
 
         CSWI cswi = new CSWI();
@@ -72,46 +76,46 @@ public class Main {
                 new NHMISignal("ic", lsvs.getOut().get(2).getInstMag().getF())
         );
 
-        NHMI nhmiRmsAndStrVal = new NHMI();
-        logicalNodes.add(nhmiRmsAndStrVal);
+        NHMI nhmiAnalog = new NHMI();
+        logicalNodes.add(nhmiAnalog);
 
-        nhmiRmsAndStrVal.addSignals(
+        nhmiAnalog.addSignals(
                 new NHMISignal("rmsA", mmxu.A.getPhsA().getInstCVal().getMag().getF()),
                 new NHMISignal("StrValPtoc1", ptoc1.StrVal.getSetMag().getF()),
                 new NHMISignal("StrValPtoc2", ptoc2.StrVal.getSetMag().getF()),
                 new NHMISignal("StrValPtoc3", ptoc3.StrVal.getSetMag().getF())
         );
-        nhmiRmsAndStrVal.addSignals(
+        nhmiAnalog.addSignals(
                 new NHMISignal("rmsB", mmxu.A.getPhsB().getInstCVal().getMag().getF()),
                 new NHMISignal("StrValPtoc1", ptoc1.StrVal.getSetMag().getF()),
                 new NHMISignal("StrValPtoc2", ptoc2.StrVal.getSetMag().getF()),
                 new NHMISignal("StrValPtoc3", ptoc3.StrVal.getSetMag().getF())
         );
-        nhmiRmsAndStrVal.addSignals(
+        nhmiAnalog.addSignals(
                 new NHMISignal("rmsC", mmxu.A.getPhsC().getInstCVal().getMag().getF()),
                 new NHMISignal("StrValPtoc1", ptoc1.StrVal.getSetMag().getF()),
                 new NHMISignal("StrValPtoc2", ptoc2.StrVal.getSetMag().getF()),
                 new NHMISignal("StrValPtoc3", ptoc3.StrVal.getSetMag().getF())
         );
 
-        NHMI nhmiDiscret = new NHMI();
-        logicalNodes.add(nhmiDiscret);
-        nhmiDiscret.addSignals(
+        NHMI nhmiProtectionWorking = new NHMI();
+        logicalNodes.add(nhmiProtectionWorking);
+        nhmiProtectionWorking.addSignals(
                 new NHMISignal("StrPtoc1", ptoc1.Str.getGeneral())
         );
-        nhmiDiscret.addSignals(
+        nhmiProtectionWorking.addSignals(
                 new NHMISignal("OpPtoc1", ptoc1.Op.getGeneral())
         );
-        nhmiDiscret.addSignals(
+        nhmiProtectionWorking.addSignals(
                 new NHMISignal("StrPtoc2", ptoc2.Str.getGeneral())
         );
-        nhmiDiscret.addSignals(
+        nhmiProtectionWorking.addSignals(
                 new NHMISignal("OpPtoc2", ptoc2.Op.getGeneral())
         );
-        nhmiDiscret.addSignals(
+        nhmiProtectionWorking.addSignals(
                 new NHMISignal("StrPtoc3", ptoc3.Str.getGeneral())
         );
-        nhmiDiscret.addSignals(
+        nhmiProtectionWorking.addSignals(
                 new NHMISignal("OpPtoc3", ptoc3.Op.getGeneral())
         );
 

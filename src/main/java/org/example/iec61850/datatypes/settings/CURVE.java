@@ -9,7 +9,6 @@ import org.example.iec61850.datatypes.common.Data;
  * Класс для настройки кривой
  */
 
-
 @Getter @Setter
 public class CURVE extends Data {
     private Attribute<Float> setParA = new Attribute<>();

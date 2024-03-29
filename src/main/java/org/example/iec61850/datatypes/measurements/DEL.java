@@ -25,5 +25,4 @@ public class DEL extends Data {
         Va, Vb, Vc, Aa, Ab, Ac, Vab, Vbc,
         Vca, Vother, Aother, Synchrophasor
     }
-
 }

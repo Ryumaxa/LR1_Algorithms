@@ -3,16 +3,18 @@ package org.example.iec61850.datatypes.utils;
 import org.example.iec61850.datatypes.common.Attribute;
 import org.example.iec61850.datatypes.measurements.CMV;
 import org.example.iec61850.datatypes.measurements.SAV;
-import org.example.iec61850.datatypes.measurements.Vector;
 import org.example.iec61850.datatypes.settings.ING;
+
+/**
+ * Класс для реализации фильтра Фурье
+ */
 
 public class Fourier extends Filter{
     private ING bSize = new ING();
     private final SAV[] buffer;
     public Attribute<Integer> bCount = new Attribute<>();
     public Attribute<Double> rVal = new Attribute<>();
-    public
-    Attribute<Double> imVal = new Attribute<>();
+    public Attribute<Double> imVal = new Attribute<>();
     public Attribute<Double> freq = new Attribute<>();
     public Attribute<Double> dT = new Attribute<>();
 
@@ -62,5 +64,4 @@ public class Fourier extends Filter{
             bCount.setValue(0);
         }
     }
-
 }

@@ -6,7 +6,6 @@ import org.example.iec61850.datatypes.controls.SPC;
 import org.example.iec61850.datatypes.logicalNodes.common.LN;
 import org.example.iec61850.datatypes.protection.ACT;
 import org.example.iec61850.datatypes.protection.SPS;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,6 +53,4 @@ public class CSWI extends LN {
             PosC.getStVal().setValue(DPC.Values.ON);
         }
     }
-
-
 }

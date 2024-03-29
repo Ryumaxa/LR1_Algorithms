@@ -20,5 +20,4 @@ public class INC extends Data {
     private Attribute<Boolean> opRcvd = new Attribute<>();
     private Attribute<Boolean> opOk = new Attribute<>();
     private Timestamp tOpOk = new Timestamp();
-
 }

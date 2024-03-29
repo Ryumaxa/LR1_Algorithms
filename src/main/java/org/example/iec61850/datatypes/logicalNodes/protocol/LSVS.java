@@ -29,8 +29,6 @@ public class LSVS extends LN {
     private final List<SAV> out = new ArrayList<>();
     private List<String> csvFileList = new ArrayList<>();
     private List<String> cfgFileList = new ArrayList<>();
-//    private List<Double> kAList = new ArrayList<>();
-//    private List<Double> kBList = new ArrayList<>();
     private Iterator<String> csvFileIter;
 
     private int analogNumber = 0;
@@ -53,12 +51,6 @@ public class LSVS extends LN {
                 double value = 1000 * Double.parseDouble(str[i + 1]);
                 out.get(i).getInstMag().getF().setValue(value);
             }
-
-//            for (int i = 2 , j = 0; i < this.analogNumber + 2; i++, j++){
-//                double value = 1000 * Double.parseDouble(str[i]) * this.kAList.get(j) + this.kBList.get(j);
-//
-//                this.out.get(j).getInstMag().getF().setValue(value);
-//            }
         }
     }
 
@@ -72,51 +64,9 @@ public class LSVS extends LN {
             csvFileIter.next();
         }
         analogNumber = Integer.parseInt(cfgFileList.get(1).split(",")[1].replace("A", ""));
-        discretNumber = Integer.parseInt(cfgFileList.get(1).split(",")[2].replace("D", ""));
     }
 
     public boolean hasData() {
         return this.csvFileIter.hasNext();
     }
-//
-//    public void setFileName(String fileName) throws Exception {
-//        this.fileName = fileName;
-//
-//        String cfgPath = path + fileName + ".cfg";
-//        String datPath = path + fileName + ".dat";
-//
-//        File cfgFile = new File(cfgPath);
-//        File datFile = new File(datPath);
-//
-//        if (!cfgFile.exists()) throw new Exception("Путь указан неверно");
-//        if (!datFile.exists()) throw new Exception("Путь указан неверно");
-//
-//        this.cfgFileList = Files.readAllLines(cfgFile.toPath());
-//        this.datFileList = Files.readAllLines(datFile.toPath());
-//
-//        String strNumber = this.cfgFileList.get(0)
-//                .replace("A", "")
-//                .replace("D", "");
-//        this.analogNumber = Integer.parseInt(strNumber.split(",")[1]);
-//        this.discretNumber = Integer.parseInt(strNumber.split(",")[2]);
-//
-//        for (int i = 2; i < this.analogNumber + 2; i++ ) {
-//            double kA = Double.parseDouble(this.cfgFileList.get(i).split(";")[5]);
-//            double kB = Double.parseDouble(this.cfgFileList.get(i).split(";")[6]);
-//
-//            this.kAList.add(kA);
-//            this.kBList.add(kB);
-//
-//            System.out.println(this.cfgFileList.get(i));
-//        }
-
-        //Iterator datIterator = new Iterator
-
-
-
-
-
-
-
-
 }

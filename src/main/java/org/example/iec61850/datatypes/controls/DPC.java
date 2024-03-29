@@ -20,5 +20,4 @@ public class DPC extends Data {
     public enum Values{
         INTERMEDIATE_STATE, OFF, ON, BAD_STATE
     }
-
 }

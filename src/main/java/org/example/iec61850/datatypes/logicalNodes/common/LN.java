@@ -2,6 +2,7 @@ package org.example.iec61850.datatypes.logicalNodes.common;
 
 import lombok.Getter;
 import lombok.Setter;
+
 /**
  * Базовый класс для всех логических узлов
  */

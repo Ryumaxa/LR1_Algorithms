@@ -14,5 +14,4 @@ import org.example.iec61850.datatypes.common.Data;
 public class ENG extends Data {
     private Attribute<Enumerated> setVal = new Attribute<>();
     private enum Enumerated{}
-
 }

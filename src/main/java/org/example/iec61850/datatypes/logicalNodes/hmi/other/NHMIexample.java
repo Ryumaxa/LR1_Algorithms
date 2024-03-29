@@ -3,8 +3,6 @@ package org.example.iec61850.datatypes.logicalNodes.hmi.other;
 import org.example.iec61850.datatypes.logicalNodes.common.LN;
 import org.example.iec61850.datatypes.logicalNodes.hmi.NHMI;
 import org.example.iec61850.datatypes.logicalNodes.hmi.NHMIP;
-import org.example.iec61850.datatypes.logicalNodes.hmi.other.NHMIPoint;
-import org.example.iec61850.datatypes.logicalNodes.hmi.other.NHMISignal;
 import org.example.iec61850.datatypes.common.Attribute;
 
 
@@ -66,6 +64,4 @@ public class NHMIexample {
             logicalNodes.forEach(LN::process);
         }
     }
-
-
 }
